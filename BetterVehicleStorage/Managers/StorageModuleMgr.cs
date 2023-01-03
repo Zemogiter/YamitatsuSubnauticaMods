@@ -31,7 +31,7 @@
             var storageModuleMk2TechType = RegisterModule(new StorageModuleMk2());
             var storageModuleMk3TechType = RegisterModule(new StorageModuleMk3(storageModuleMk2TechType));
             var storageModuleMk4TechType = RegisterModule(new StorageModuleMk4(storageModuleMk3TechType));
-            RegisterModule(new StorageModuleMk5(storageModuleMk4TechType));
+            var storageModuleMk5TechType = RegisterModule(new StorageModuleMk5(storageModuleMk4TechType));
         }
 
         private static TechType RegisterModule(StorageModule storageModule)

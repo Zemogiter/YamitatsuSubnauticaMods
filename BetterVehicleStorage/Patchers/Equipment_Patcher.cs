@@ -1,7 +1,7 @@
 ﻿namespace BetterVehicleStorage.Patchers
 {
     using System.Diagnostics;
-    using Harmony;
+    using HarmonyLib;
     using Managers;
     using UnityEngine;
     using Utilities;

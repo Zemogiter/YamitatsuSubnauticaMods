@@ -1,0 +1,6 @@
+C:\Users\Jonasz\Downloads\YamitatsuSubnauticaMods-master\Utilities\bin\Debug\Utilities.dll
+C:\Users\Jonasz\Downloads\YamitatsuSubnauticaMods-master\Utilities\bin\Debug\Utilities.pdb
+C:\Users\Jonasz\Downloads\YamitatsuSubnauticaMods-master\Utilities\obj\Debug\Utilities.csproj.AssemblyReference.cache
+C:\Users\Jonasz\Downloads\YamitatsuSubnauticaMods-master\Utilities\obj\Debug\Utilities.csproj.CoreCompileInputs.cache
+C:\Users\Jonasz\Downloads\YamitatsuSubnauticaMods-master\Utilities\obj\Debug\Utilities.dll
+C:\Users\Jonasz\Downloads\YamitatsuSubnauticaMods-master\Utilities\obj\Debug\Utilities.pdb

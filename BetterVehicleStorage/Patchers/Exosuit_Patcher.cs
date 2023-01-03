@@ -1,6 +1,6 @@
 ﻿namespace BetterVehicleStorage.Patchers
 {
-    using Harmony;
+    using HarmonyLib;
     using Managers;
     using Utilities;
 
@@ -26,7 +26,8 @@
             return false;
         }
     }
-    
+
+    /* The type Exosuit no longer has OnUpgradeModuleUse member in it
     [HarmonyPatch(typeof(Exosuit))]
     [HarmonyPatch("OnUpgradeModuleUse")]
     internal class Exosuit_OnUpgradeModuleUse_Patcher
@@ -37,7 +38,7 @@
             StorageModuleMgr.OnUpgradeModuleUseFromExosuit(__instance, techType, slotID);
         }
     }
-    
+    */
     [HarmonyPatch(typeof(Exosuit))]
     [HarmonyPatch("UpdateStorageSize")]
     internal class Exosuit_UpdateStorageSize_Patcher

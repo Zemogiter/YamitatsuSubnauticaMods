@@ -1,6 +1,6 @@
 ﻿namespace BetterVehicleStorage.Patchers
 {
-    using Harmony;
+    using HarmonyLib;
     using Managers;
 
     [HarmonyPatch(typeof(SeaMoth))]

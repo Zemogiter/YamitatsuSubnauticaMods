@@ -27,14 +27,15 @@
 
         public sealed override CraftTree.Type FabricatorType => CraftTree.Type.Workbench;
 
-        public override string[] StepsToFabricatorTab => new[] { Main.WorkBenchTab };
+        public override string[] StepsToFabricatorTab => new[] { Plugin.WorkBenchTab };
 
         public sealed override string AssetsFolder => "BetterVehicleStorage/Assets";
 
         public override GameObject GetGameObject()
         {
-            GameObject prefab = CraftData.GetPrefabForTechType(TechType.VehicleStorageModule);
-            return Object.Instantiate(prefab);
+            var task = CraftData.GetPrefabForTechTypeAsync(TechType.VehicleStorageModule);
+            GameObject template = task.GetResult();
+            return template;
         }
     }
 }
