@@ -27,18 +27,21 @@
         }
     }
 
-    /* The type Exosuit no longer has OnUpgradeModuleUse member in it
+    //The type Exosuit no longer has OnUpgradeModuleUse member in it, hence the need for if checking if it is a Exosuit
     [HarmonyPatch(typeof(Exosuit))]
     [HarmonyPatch("OnUpgradeModuleUse")]
     internal class Exosuit_OnUpgradeModuleUse_Patcher
     {
         [HarmonyPostfix]
-        internal static void Postfix(ref Exosuit __instance, TechType techType, int slotID)
+        internal static void Postfix(ref Vehicle __instance, TechType techType, int slotID)
         {
-            StorageModuleMgr.OnUpgradeModuleUseFromExosuit(__instance, techType, slotID);
+            if (Vehicle.FindObjectOfType<Exosuit>())
+            {
+                StorageModuleMgr.OnUpgradeModuleUseFromExosuit((Exosuit)__instance, techType, slotID);
+            }
         }
     }
-    */
+    
     [HarmonyPatch(typeof(Exosuit))]
     [HarmonyPatch("UpdateStorageSize")]
     internal class Exosuit_UpdateStorageSize_Patcher

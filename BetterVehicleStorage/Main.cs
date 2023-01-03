@@ -26,11 +26,7 @@
         {
             Console.WriteLine("BetterVehicleStorage - Started patching v" + Assembly.GetExecutingAssembly().GetName().Version.ToString(3));
 
-            CraftTreeHandler.AddTabNode(
-                CraftTree.Type.Workbench,
-                WorkBenchTab,
-                "Storage Modules",
-                SpriteManager.Get(TechType.VehicleStorageModule));
+            //CraftTreeHandler.AddTabNode(CraftTree.Type.Workbench,WorkBenchTab,"Storage Modules",SpriteManager.Get(TechType.VehicleStorageModule));
 
             StorageModuleMgr.RegisterModules();
 
