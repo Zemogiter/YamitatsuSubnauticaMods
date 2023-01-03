@@ -28,7 +28,7 @@
     }
 
     //The type Exosuit no longer has OnUpgradeModuleUse member in it, hence the need for if checking if it is a Exosuit
-    [HarmonyPatch(typeof(Exosuit))]
+    [HarmonyPatch(typeof(Vehicle))]
     [HarmonyPatch("OnUpgradeModuleUse")]
     internal class Exosuit_OnUpgradeModuleUse_Patcher
     {
