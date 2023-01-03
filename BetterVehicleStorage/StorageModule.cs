@@ -2,6 +2,7 @@
 {
     using SMLHelper.V2.Assets;
     using SMLHelper.V2.Handlers;
+    using System.Collections;
     using UnityEngine;
     using Utilities;
 
@@ -27,15 +28,17 @@
 
         public sealed override CraftTree.Type FabricatorType => CraftTree.Type.Workbench;
 
-        public override string[] StepsToFabricatorTab => new[] { Plugin.WorkBenchTab };
+        //public override string[] StepsToFabricatorTab => new[] { Plugin.WorkBenchTab };
 
         public sealed override string AssetsFolder => "BetterVehicleStorage/Assets";
 
-        public override GameObject GetGameObject()
+        public override IEnumerator GetGameObjectAsync(IOut<GameObject> gameObject)
         {
-            var task = CraftData.GetPrefabForTechTypeAsync(TechType.VehicleStorageModule);
-            GameObject template = task.GetResult();
-            return template;
+            CoroutineTask<GameObject> task = CraftData.GetPrefabForTechTypeAsync(TechType.VehicleStorageModule);
+            yield return task;
+            GameObject origibalPrefab = task.GetResult();
+            GameObject resultPrefab = Object.Instantiate(origibalPrefab);
+            gameObject.Set(resultPrefab);
         }
     }
 }
