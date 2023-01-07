@@ -4,12 +4,11 @@
     using SMLHelper.V2.Handlers;
     using System.Collections;
     using UnityEngine;
-    using Utilities;
 
     public abstract class StorageModule : Craftable
     {
-        public int StorageWidth = 4;
-        public int StorageHeight = 4;
+        public int StorageWidth;
+        public int StorageHeight;
         protected StorageModule(string classId, string friendlyName, string description)
             : base(classId, friendlyName, description)
         {
@@ -27,8 +26,6 @@
         public sealed override TechType RequiredForUnlock => TechType.Workbench;
 
         public sealed override CraftTree.Type FabricatorType => CraftTree.Type.Workbench;
-
-        //public override string[] StepsToFabricatorTab => new[] { Plugin.WorkBenchTab };
 
         public sealed override string AssetsFolder => "BetterVehicleStorage/Assets";
 

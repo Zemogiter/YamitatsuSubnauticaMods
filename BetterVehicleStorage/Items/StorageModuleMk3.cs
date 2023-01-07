@@ -1,7 +1,11 @@
 ﻿namespace BetterVehicleStorage.Items
 {
     using System.Collections.Generic;
+    using System.IO;
+    using System.Reflection;
     using SMLHelper.V2.Crafting;
+    using SMLHelper.V2.Utility;
+    using static Atlas;
 
     public class StorageModuleMk3 : StorageModule
     {
@@ -30,6 +34,11 @@
                     new Ingredient(TechType.AramidFibers, 1)
                 }
             };
+        }
+        protected override Sprite GetItemSprite()
+        {
+            Sprite sprite = ImageUtils.LoadSpriteFromFile(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Assets", "StorageModuleMk3.png"));
+            return sprite;
         }
     }
 }
